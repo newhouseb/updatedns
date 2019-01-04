@@ -16,7 +16,7 @@ if current_ip is None:
 # Find the hosted zone
 record_to_update = sys.argv[1]
 zone_to_update = '.'.join(record_to_update.split('.')[-2:])
-conn = boto3.Session(profile_name='route53').client('route53')
+conn = boto3.Session().client('route53')
 zone = conn.list_hosted_zones_by_name(DNSName=zone_to_update)['HostedZones'][0]['Id']
 
 # Check to see if it has the right IP
