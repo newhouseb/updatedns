@@ -13,13 +13,13 @@ docker build -t updatedns .
 docker run -e AWS_ACCESS_KEY_ID='[access key]' -e AWS_SECRET_ACCESS_KEY='[secret access key]' -e DOMAIN='[domain, i.e. server.bennewhouse.com]' updatedns
 ```
 
-*To run every 30 minutes*
+*To run every 5 minutes*
 ```
 crontab -e
 ```
 Then add
 ```
-*/30 * * * * docker run -e AWS_ACCESS_KEY_ID='[access key]' -e AWS_SECRET_ACCESS_KEY='[secret access key]' -e DOMAIN='[domain, i.e. server.bennewhouse.com]' updatedns
+*/5 * * * * docker run -e AWS_ACCESS_KEY_ID='[access key]' -e AWS_SECRET_ACCESS_KEY='[secret access key]' -e DOMAIN='[domain, i.e. server.bennewhouse.com]' updatedns
 ```
 
 
