@@ -10,7 +10,7 @@ docker build -t updatedns .
 
 *To run*
 ```
-docker run -e AWS_ACCESS_KEY_ID='[access key]' -e AWS_SECRET_ACCESS_KEY='[secret access key]' -e DOMAIN='[domain, i.e. server.bennewhouse.com]' updatedns
+docker run -e AWS_ACCESS_KEY_ID='[access key]' -e AWS_SECRET_ACCESS_KEY='[secret access key]' -e DOMAIN='[domain, i.e. server.bennewhouse.com]' --rm updatedns
 ```
 
 *To run every 5 minutes*
@@ -19,7 +19,7 @@ crontab -e
 ```
 Then add
 ```
-*/5 * * * * docker run -e AWS_ACCESS_KEY_ID='[access key]' -e AWS_SECRET_ACCESS_KEY='[secret access key]' -e DOMAIN='[domain, i.e. server.bennewhouse.com]' updatedns
+*/5 * * * * docker run -e AWS_ACCESS_KEY_ID='[access key]' -e AWS_SECRET_ACCESS_KEY='[secret access key]' -e DOMAIN='[domain, i.e. server.bennewhouse.com]' --rm updatedns
 ```
 
 # Other handy commands for certbot:
